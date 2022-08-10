@@ -1,0 +1,76 @@
+{
+  "options": {
+    "shell": {
+      "executable": "C:\\Windows\\System32\\cmd.exe",
+      "args": [
+        "/C",
+        "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Auxiliary\\Build\\vcvars64.bat\"",
+        "&&"
+      ]
+    }
+  },
+  "tasks": [
+    {
+      "label": "host",
+      "command": "cl.exe",
+      "args": [
+        "${workspaceFolder}\\src\\host.cpp",
+        "/Fe:",
+        "${workspaceFolder}\\bin\\host.exe",
+        "/EHsc",
+        "/source-charset:utf-8",
+        "/O2",
+        "/W4",
+        "/WX",
+        "/MT",
+        "/DUNICODE",
+        "/D_UNICODE",
+        "/std:c++latest",
+        "/Fo${workspaceFolder}\\obj\\"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "silent",
+        "showReuseMessage": false,
+      },
+      "type": "shell"
+    },
+    {
+      "label": "runner",
+      "command": "cl.exe",
+      "args": [
+        "${workspaceFolder}\\src\\runner.cpp",
+        "/Fe:",
+        "${workspaceFolder}\\bin\\runner.exe",
+        "/EHsc",
+        "/utf-8",
+        "/O2",
+        "/W4",
+        "/WX",
+        "/MT",
+        "/DUNICODE",
+        "/D_UNICODE",
+        "/std:c++latest",
+        "/Fo${workspaceFolder}\\obj\\"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "silent",
+        "showReuseMessage": false,
+      },
+      "type": "shell"
+    },
+    {
+      "label": "build",
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
+      "dependsOn": [
+        "host",
+        "runner"
+      ]
+    }
+  ],
+  "version": "2.0.0"
+}

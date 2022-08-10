@@ -1,0 +1,18 @@
+{
+  "name": "@gytx/pause-console-wsl",
+  "version": "0.1.0",
+  "description": "Console pauser for WSL",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VSCodeConfigHelper/pause-console-wsl.git"
+  },
+  "author": "Guyutongxue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VSCodeConfigHelper/pause-console-wsl/issues"
+  },
+  "homepage": "https://github.com/VSCodeConfigHelper/pause-console-wsl#readme"
+}

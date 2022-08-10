@@ -1,0 +1,4 @@
+BasedOnStyle: LLVM
+PointerAlignment: Left
+DerivePointerAlignment: false
+AlwaysBreakTemplateDeclarations: Yes
