@@ -26,4 +26,5 @@
 - 需保证运行时库是最新版本的 UCRT，以确保编码不出差错。详情参考[此项目](https://github.com/huangqinjin/wmain)。注：niXman 的 MinGW 构建暂时无法链接到 UCRT，所以不能用。
 - 编译时添加 `_UNICODE` `UNICODE` 定义，以使用“Unicode版本”的 Win32 API。
 - 必须编译为 x64 可执行文件。x86 可执行文件会在 WoW64 下运行；WoW64 内没有 `wsl.exe`。
+- 使用了大量 C++20/23 特性，请添加 `/std:c++latest` 选项。
 - 我使用的编译选项可参考 [.vscode/tasks.json](./.vscode/tasks.json)。

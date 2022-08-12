@@ -47,7 +47,7 @@ void report(int exitCode, double elapsed) {
   }
   const auto width = info.dwSize.X;
   const auto exitCodeStr = std::format(" 返回值 {} ", exitCode);
-  const auto timeStr = std::format(" 用时 {:.4} ", elapsed);
+  const auto timeStr = std::format(" 用时 {:.4}s ", elapsed);
   // 2 Powerline Glyph - 5 CJK (width 2, UTF-8 3)
   const auto hintLen = exitCodeStr.size() + timeStr.size() - 3;
   const auto dotsLen = (width - hintLen) / 2;
@@ -87,6 +87,8 @@ int wmain(int argc, wchar_t** argv) try {
   const std::wstring username{argv[2]};
   const std::wstring cwd{argv[3]};
   const std::vector args(argv + 4, argv + argc);
+
+  SetConsoleTitle(args[0]);
 
   // Notice: wsl.exe only exists in x64 Windows, not WoW64.
   // So make sure this file is compiled to x64!
