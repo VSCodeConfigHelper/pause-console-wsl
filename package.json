@@ -1,6 +1,6 @@
 {
   "name": "@gytx/pause-console-wsl",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Console pauser for WSL",
   "type": "module",
   "main": "index.mjs",

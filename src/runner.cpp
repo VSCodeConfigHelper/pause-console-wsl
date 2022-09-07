@@ -53,7 +53,7 @@ void report(int exitCode, double elapsed) {
   const auto dotsLen = (width - hintLen) / 2;
   std::string dots; // TODO: use views::repeat instead
   for (auto i{0u}; i < dotsLen; i++) {
-    dots += "·";
+    dots += "-";
   }
   constexpr auto GRAY{"\x1b[38;5;242m"};
   constexpr auto RESET{"\x1b[0m"};
